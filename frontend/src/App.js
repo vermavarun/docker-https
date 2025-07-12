@@ -10,7 +10,8 @@ function App() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://127.0.0.1:5000/');
+        const apiUrl = process.env.REACT_APP_API_URL || 'https://localhost/api';
+        const response = await fetch(`${apiUrl}/`);
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -43,7 +44,7 @@ function App() {
 
       {data && (
         <div>
-          <h3>Response from http://127.0.0.1:5000/:</h3>
+          <h3>Response from HTTPS API:</h3>
           <pre style={{
             backgroundColor: '#f4f4f4',
             padding: '10px',
