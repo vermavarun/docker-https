@@ -13,5 +13,7 @@ docker compose logs -f
 # Rebuild specific service
 docker compose build backend
 
+# Summary
 ./start-https.sh
+
 open https://localhost:4443/
